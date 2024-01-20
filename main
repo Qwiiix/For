@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    // 1. Выбор размера
+    // 2. Выбор текстуры
+    // 3. Выбор типа линии
+    // 4. Вывод
+
+    cout << "[+] Фигурки\n\n";
+    cout << "[+] Размер: ";
+    
+    int size;
+    cin >> size;
+
+    while (size < 1 || size > 30)
+    {
+        cout << "Вы ввели недопустимый размер" << endl;
+        cout << "Введите новый размер: "; cin >> size;
+    }
+
+    cout << "[+] Текстура: ";
+
+    char texture;
+    cin >> texture;
+
+    cout << "\n\x1b[90m0 - серый | 1 - красный | 2 - зеленый | 3 - желтый\x1b[0m\n";
+    cout << "[+] Цвет: ";
+
+    short color;
+    cin >> color;
+
+    // 0 - горизонт . 1 - вертикальная
+    cout << "\n\x1b[90m0 - горизонтальная | 1 - вертикальная\x1b[0m\n";
+    cout << "[+] Тип линии: ";
+
+    short type;
+    cin >> type;
+
+    cout << "\n\x1b[90mВывод:\x1b[0m\n";
+
+    switch (color)
+    {
+    case 0:
+        cout << "\x1b[90m";
+        break;
+    case 1:
+        cout << "\x1b[91m";
+        break;
+    case 2:
+        cout << "\x1b[92m";
+        break;
+    case 3:
+        cout << "\x1b[93m";
+        break;
+    case 4:
+        cout << "\x1b[94m";
+        break;
+    }
+
+    for (int i = 0; i < size; i++) {
+
+        if (type == 0) {
+            cout << texture << " ";
+        }
+        else if (type == 1) {
+            cout << texture << endl;
+        }
+        else {
+            cout << "\x1b[91mОшибка. Вы ввели не правильное значение для типа линии.";
+            break;
+        }
+    }
+
+    int _;
+    cin >> _;
+}
