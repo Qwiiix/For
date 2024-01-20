@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    int circle;
+
+    cout << "Введите число: "; cin >> circle;
+    while( circle < 1 || circle > 15)
+    {
+        cout << "Вы ввели недопустимое значение" << endl;
+        cout << "Введите новое значение: "; cin >> circle;
+    }
+
+
+    for(int i = 1; i < circle + 1; i++)
+    {
+        cout << "Круг " << i << endl;
+    }
+
+    int _;
+    cin >> _;
+}
